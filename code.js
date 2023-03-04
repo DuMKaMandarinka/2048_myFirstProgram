@@ -7,6 +7,7 @@ let filled =[];//заполненные ячейки
 let points = [];//очки ячеек
 let Two_or_Four =[0,0,1,0,0,0,0,0,0,0]
 let atribut =0;
+let score = 0;
 //создание игрового поля
 for (let i = 0; i <= 15; i++) { 
   const cell = document.createElement('div');
@@ -88,6 +89,7 @@ for(let i=0,j=0;i<array;i++,j++)
     if(points1==points[i])
     {
        points[index1]=points[i]*2;
+       score += points[index1];
        points1=0;
        doAnimaionUp(filled_test[j],filled[index1]);
        const idElemetns = document.getElementById("id"+filled[index1]);
@@ -115,6 +117,7 @@ for(let i=0,j=0;i<array;i++,j++)
     if(points2==points[i])
     {
        points[index2]=points[i]*2;
+       score += points[index2];
        points2=0;
        doAnimaionUp(filled_test[j],filled[index2]);
       //  let aa = idValue+i;
@@ -143,6 +146,7 @@ for(let i=0,j=0;i<array;i++,j++)
     if(points3==points[i])
     {
        points[index3]=points[i]*2;
+       score += points[index3];
        points3=0;
        doAnimaionUp(filled_test[j],filled[index3]);
       //  let aa = idValue+i;
@@ -171,6 +175,7 @@ for(let i=0,j=0;i<array;i++,j++)
     if(points4==points[i])
     {
        points[index4]=points[i]*2;
+       score += points[index4];
        points4=0;
        doAnimaionUp(filled_test[j],filled[index4]);
       //  let aa = idValue+i;
@@ -273,6 +278,7 @@ for(let i=0,j=0;i<array;i++,j++)
     if(points1==points[i])
     {
        points[index1]=points[i]*2;
+       score += points[index1];
        points1=0;
        doAnimaionDown(filled_test[j],filled[index1]);
        const idElemetns = document.getElementById("id"+filled[index1]);
@@ -300,6 +306,7 @@ for(let i=0,j=0;i<array;i++,j++)
     if(points2==points[i])
     {
        points[index2]=points[i]*2;
+       score += points[index2];
        points2=0;
        doAnimaionDown(filled_test[j],filled[index2]);
       //  let aa = idValue+i;
@@ -328,6 +335,7 @@ for(let i=0,j=0;i<array;i++,j++)
     if(points3==points[i])
     {
        points[index3]=points[i]*2;
+       score += points[index3];
        points3=0;
        doAnimaionDown(filled_test[j],filled[index3]);
       //  let aa = idValue+i;
@@ -356,6 +364,7 @@ for(let i=0,j=0;i<array;i++,j++)
     if(points4==points[i])
     {
        points[index4]=points[i]*2;
+       score += points[index4];
        points4=0;
        doAnimaionDown(filled_test[j],filled[index4]);
       //  let aa = idValue+i;
@@ -459,6 +468,7 @@ else if(e.keyCode==37){
       if(points1==points[i])
       {
          points[index1]=points[i]*2;
+         score += points[index1];
          points1=0;
          doAnimaionLeft(filled_test[j],filled[index1]);
          const idElemetns = document.getElementById("id"+filled[index1]);
@@ -486,6 +496,7 @@ else if(e.keyCode==37){
       if(points2==points[i])
       {
          points[index2]=points[i]*2;
+         score += points[index2];
          points2=0;
          doAnimaionLeft(filled_test[j],filled[index2]);
         //  let aa = idValue+i;
@@ -514,6 +525,7 @@ else if(e.keyCode==37){
       if(points3==points[i])
       {
          points[index3]=points[i]*2;
+         score += points[index3];
          points3=0;
          doAnimaionLeft(filled_test[j],filled[index3]);
         //  let aa = idValue+i;
@@ -542,6 +554,7 @@ else if(e.keyCode==37){
       if(points4==points[i])
       {
          points[index4]=points[i]*2;
+         score += points[index4];
          points4=0;
          doAnimaionLeft(filled_test[j],filled[index4]);
         //  let aa = idValue+i;
@@ -644,6 +657,7 @@ else if(e.keyCode==39){
         if(points1==points[i])
         {
            points[index1]=points[i]*2;
+           score += points[index1];
            points1=0;
            doAnimaionRight(filled_test[j],filled[index1]);
            const idElemetns = document.getElementById("id"+filled[index1]);
@@ -671,6 +685,7 @@ else if(e.keyCode==39){
         if(points2==points[i])
         {
            points[index2]=points[i]*2;
+           score += points[index2];
            points2=0;
            doAnimaionRight(filled_test[j],filled[index2]);
           //  let aa = idValue+i;
@@ -699,6 +714,7 @@ else if(e.keyCode==39){
         if(points3==points[i])
         {
            points[index3]=points[i]*2;
+           score += points[index3];
            points3=0;
            doAnimaionRight(filled_test[j],filled[index3]);
           //  let aa = idValue+i;
@@ -727,6 +743,7 @@ else if(e.keyCode==39){
         if(points4==points[i])
         {
            points[index4]=points[i]*2;
+           score += points[index4];
            points4=0;
            doAnimaionRight(filled_test[j],filled[index4]);
           //  let aa = idValue+i;
@@ -805,6 +822,8 @@ function random(){
     value.style.top = `${ cellSize * top1+indet*top1+indet}px`;
     
   }
+  let scoreHTML = document.getElementById("score");
+  scoreHTML.innerHTML = score;
   field.appendChild(value);
 }
 
